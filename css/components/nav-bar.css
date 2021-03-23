@@ -1,0 +1,73 @@
+.nav {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #f9f9fa;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  max-width: 675px;
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+.nav__link {
+  position: relative;
+  color: #2e363e;
+}
+.nav__dot {
+  position: absolute;
+  left: 30px;
+}
+
+@keyframes notificationAnimation {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes rotateNotificationAnimation {
+  from {
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: none;
+  }
+}
+.nav__notification {
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  animation: notificationAnimation 2s ease,
+    rotateNotificationAnimation 1.5s 2s ease-in-out infinite;
+}
+
+@keyframes appearBtnAnimation {
+  from {
+    transform: translateY(70px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.nav__btn {
+  transform: translateY(70px);
+  animation: appearBtnAnimation 0.3s ease-in-out forwards;
+}
+.nav__btn:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.nav__btn:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.nav__btn:last-child {
+  animation-delay: 0.8s;
+}
